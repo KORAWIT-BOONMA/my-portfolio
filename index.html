@@ -495,29 +495,43 @@
       border: 2px solid var(--border);
       box-shadow: 5px 5px 0 var(--shadow);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    .certificate-image {
-      width: 100%;
+    .certificate-preview {
       aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
       background: var(--surface2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       border-bottom: 2px solid var(--border);
+      gap: 10px;
+      padding: 20px;
+      text-align: center;
     }
 
-    .certificate-placeholder {
-      aspect-ratio: 4 / 3;
-      background: var(--surface2);
-      display: grid;
-      place-items: center;
-      border-bottom: 2px solid var(--border);
-      color: var(--accent);
+    .certificate-preview span {
       font-size: 40px;
+    }
+
+    .certificate-link-btn {
+      font-size: 12px;
+      padding: 6px 12px;
+      background: var(--accent);
+      color: #102018;
+      font-weight: 600;
+      border: 2px solid var(--border);
+      box-shadow: 2px 2px 0 var(--shadow);
     }
 
     .certificate-content {
       padding: 18px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .certificate-content h3 {
@@ -642,7 +656,7 @@
         font-size: 30px;
       }
 
-      section:not(.hero) {
+      .section:not(.hero) {
         padding: 65px 0;
       }
 
@@ -1034,60 +1048,51 @@
 
       <div class="certificates-grid">
 
-        <!-- เกียรติบัตรใบที่ 1 -->
+        <!-- เกียรติบัตรใบที่ 1: หุ่นยนต์อุตสาหกรรม -->
         <article class="certificate-card">
-          <img
-            class="certificate-image"
-            src="images/certificate-1.png"
-            alt="การควบคุมหุ่นยนต์อุตสาหกรรมสำหรับการจับชิ้นงาน: พื้นฐาน"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
-          />
-
-          <div class="certificate-placeholder" style="display:none;">
-            🤖
+          <div class="certificate-preview">
+            <span>🤖</span>
+            <a href="20260330171859293_CERT.pdf" target="_blank" class="certificate-link-btn">เปิดดูใบวุฒิบัตร (PDF)</a>
           </div>
 
           <div class="certificate-content">
-            <h3>การควบคุมหุ่นยนต์อุตสาหกรรมสำหรับการจับชิ้นงาน: พื้นฐาน (30 ชม.)</h3>
-            <p>กรมพัฒนาฝีมือแรงงาน (สถาบันฯ ๙ พิษณุโลก) · 30 มี.ค. 2026</p>
+            <div>
+              <h3>การควบคุมหุ่นยนต์อุตสาหกรรมสำหรับการจับชิ้นงาน: พื้นฐาน (30 ชม.)</h3>
+              <p>กรมพัฒนาฝีมือแรงงาน (สถาบันฯ ๙ พิษณุโลก)</p>
+            </div>
+            <p style="margin-top: 10px;">30 มี.ค. 2026</p>
           </div>
         </article>
 
-        <!-- เกียรติบัตรใบที่ 2 -->
+        <!-- เกียรติบัตรใบที่ 2: Python Essentials 1 -->
         <article class="certificate-card">
-          <img
-            class="certificate-image"
-            src="images/certificate-2.png"
-            alt="Python Essentials 1"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
-          />
-
-          <div class="certificate-placeholder" style="display:none;">
-            🐍
+          <div class="certificate-preview">
+            <span>🐍</span>
+            <a href="PythonEssentials1Update20260305-31-562onq.pdf" target="_blank" class="certificate-link-btn">เปิดดูใบวุฒิบัตร (PDF)</a>
           </div>
 
           <div class="certificate-content">
-            <h3>Python Essentials 1</h3>
-            <p>Cisco Networking Academy & OpenEDG · 24 ธ.ค. 2025</p>
+            <div>
+              <h3>Python Essentials 1</h3>
+              <p>Cisco Networking Academy & OpenEDG</p>
+            </div>
+            <p style="margin-top: 10px;">24 ธ.ค. 2025</p>
           </div>
         </article>
 
-        <!-- เกียรติบัตรใบที่ 3 -->
+        <!-- เกียรติบัตรใบที่ 3: Cybersecurity -->
         <article class="certificate-card">
-          <img
-            class="certificate-image"
-            src="images/certificate-3.png"
-            alt="Getting Started in Cybersecurity 3.0"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
-          />
-
-          <div class="certificate-placeholder" style="display:none;">
-            🛡️
+          <div class="certificate-preview">
+            <span>🛡️</span>
+            <a href="4567633336KB.pdf" target="_blank" class="certificate-link-btn">เปิดดูใบวุฒิบัตร (PDF)</a>
           </div>
 
           <div class="certificate-content">
-            <h3>Getting Started in Cybersecurity 3.0</h3>
-            <p>Fortinet Training Institute · 23 มิ.ย. 2026</p>
+            <div>
+              <h3>Getting Started in Cybersecurity 3.0</h3>
+              <p>Fortinet Training Institute</p>
+            </div>
+            <p style="margin-top: 10px;">23 มิ.ย. 2026</p>
           </div>
         </article>
 
@@ -1116,14 +1121,14 @@
         <div class="contact-links">
 
           <!-- ช่องทางติดต่อ -->
-          <a class="contact-link" href="mailto:korawit.boon@gmail.com">
+          <a class="contact-link" href="mailto:Korawit230448@gmail.com">
             ✉ อีเมล Korawit230448@gmail.com
           </a>
 
           <a
             class="contact-link"
-            href="https://github.com/korawit-boonma"
-            target="https://github.com/KORAWIT-BOONMA"
+            href="https://github.com/KORAWIT-BOONMA"
+            target="_blank"
             rel="noopener noreferrer"
           >
             ◈ GitHub KORAWIT-BOONMA
